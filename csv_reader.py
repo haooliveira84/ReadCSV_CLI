@@ -19,10 +19,13 @@ def get_csvfile_local(file):
 
 def main():
     file = sys.argv[1]
-    if file.startswith('htt'):
-        get_csvfile_remote(file)
-    else:
-        get_csvfile_local(file)
+    try
+        if file.startswith('htt'):
+            get_csvfile_remote(file)
+        else:
+            get_csvfile_local(file)
+    except TypeError:
+        print "No CSV data recivied"
 
 if __name__ == "__main__":
     main()
