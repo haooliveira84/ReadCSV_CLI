@@ -16,7 +16,6 @@ def get_json_local(file):
     return json_result
 
 def main():
-    file = sys.argv[1]
     try:
         if file.startswith('htt'):
             get_json_remote(file)

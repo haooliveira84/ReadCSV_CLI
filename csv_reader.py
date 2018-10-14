@@ -18,7 +18,6 @@ def get_csvfile_local(file):
             print row
 
 def main():
-    file = sys.argv[1]
     try:
         if file.startswith('htt'):
             get_csvfile_remote(file)
