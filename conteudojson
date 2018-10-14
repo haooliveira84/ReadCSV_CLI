@@ -1,0 +1,72 @@
+[
+  {
+    "estado": "SC",
+    "cidade": "Tubarão",
+    "nome": "Diego Faria"
+  },
+  {
+    "estado": "SC",
+    "cidade": "Joinville",
+    "nome": "Muriel Silveira"
+  },
+  {
+    "estado": "SC",
+    "cidade": "Joinville",
+    "nome": "Pedro Silva"
+  },
+  {
+    "estado": "SC",
+    "cidade": "Joinville",
+    "nome": "Maria Eliana"
+  },
+  {
+    "estado": "SC",
+    "cidade": "Florianópolis",
+    "nome": "Marcos Costa"
+  },
+  {
+    "estado": "SC",
+    "cidade": "Florianópolis",
+    "nome": "João Gabriel"
+  },
+  {
+    "estado": "SC",
+    "cidade": "Lages",
+    "nome": "Mariana Pereira"
+  },
+  {
+    "estado": "SC",
+    "cidade": "São José",
+    "nome": "Ana Beatriz"
+  },
+  {
+    "estado": "SC",
+    "cidade": "Brusque",
+    "nome": "Yago Santos"
+  },
+  {
+    "estado": "PR",
+    "cidade": "Curitiba",
+    "nome": "Bianca Elbert"
+  },
+  {
+    "estado": "PR",
+    "cidade": "Maringá",
+    "nome": "Felipe Santos"
+  },
+  {
+    "estado": "PR",
+    "cidade": "Maringá",
+    "nome": "Marcia Bandeiras"
+  },
+  {
+    "estado": "PR",
+    "cidade": "Curitiba",
+    "nome": "Gustavo Costa"
+  },
+  {
+    "estado": "SP",
+    "cidade": "São Paulo",
+    "nome": "Cléber Warmling"
+  }
+]

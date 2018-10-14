@@ -8,12 +8,12 @@ import json
 def get_json_remote(file):
     json_data = requests.get(file)
     json_data
-    print json_data.json()
+    return json_data.json()
 
 def get_json_local(file):
     with open(file, 'r') as data_file:
         json_result = json.load(data_file)
-    print json_result
+    return json_result
 
 def main():
     file = sys.argv[1]
@@ -23,7 +23,7 @@ def main():
         else:
             get_json_local(file)
     except TypeError:
-        print "No Json data recivied"
+        return "No Json data recivied"
 
 if __name__ == "__main__":
     main()

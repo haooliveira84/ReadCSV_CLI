@@ -24,3 +24,4 @@ def main_process(json_data):
     return jsonify(customers)
 
 if __name__ == "__main__":
+    main()
