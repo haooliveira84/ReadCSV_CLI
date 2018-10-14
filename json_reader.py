@@ -1,18 +1,19 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import sys
 import requests
 import json
 
 def get_json_remote(file):
-    print "aqui"
-    r = requests.get(file)
-    json_data = json.loads(r)
+    json_data = requests.get(file)
+    json_data
     print json_data.json()
 
 def get_json_local(file):
-    with open(file) as text:
-        print json.dumps(text, sort_keys=True)
+    with open(file, 'r') as data_file:
+        json_result = json.load(data_file)
+    print json_result
 
 def main():
     file = sys.argv[1]
