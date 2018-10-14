@@ -2,12 +2,14 @@
 # This Python file uses the following encoding: utf-8
 
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+
 
 import os
 import sys
 import operator
 import json
+import csv_reader
+import json_reader
 
 from collections import Counter
 
