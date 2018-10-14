@@ -15,7 +15,7 @@ def get_json_local(file):
         json_result = json.load(data_file)
     return json_result
 
-def main():
+def origin(file):
     try:
         if file.startswith('htt'):
             get_json_remote(file)
@@ -23,7 +23,4 @@ def main():
             get_json_local(file)
     except TypeError:
         return "No Json data recivied"
-
-if __name__ == "__main__":
-    main()
 

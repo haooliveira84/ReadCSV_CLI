@@ -17,7 +17,7 @@ def get_csvfile_local(file):
         for row in reader:
             print row
 
-def main():
+def origin(file):
     try:
         if file.startswith('htt'):
             get_csvfile_remote(file)
@@ -25,6 +25,3 @@ def main():
             get_csvfile_local(file)
     except TypeError:
         print "No CSV data recivied"
-
-if __name__ == "__main__":
-    main()
