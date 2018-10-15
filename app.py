@@ -33,9 +33,12 @@ def recognize_file(file):
         with open(file) as unknown_file:
             opened = unknown_file.read(1)
             if opened != '[':
-                csv_reader.origin(file)
+                result = csv_reader.origin(file)
+                for row in result:
+                    print row
             else:
-                json_reader.origin(file)
+                result = json_reader.origin(file)
+                print result
     except TypeError:
         print "No data was receivied"
 
