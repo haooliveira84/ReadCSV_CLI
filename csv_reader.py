@@ -12,16 +12,20 @@ def get_csvfile_remote(file):
         print row
 
 def get_csvfile_local(file):
+    value = []
     with open(file) as text:
         reader = csv.reader(text, delimiter=',')
         for row in reader:
-            print row
+            value.append(row)
+        return value
 
 def origin(file):
     try:
         if file.startswith('htt'):
-            get_csvfile_remote(file)
+            ret = get_csvfile_remote(file)
+            print ret
         else:
-            get_csvfile_local(file)
+            ret = get_csvfile_local(file)
+            return ret
     except TypeError:
         print "No CSV data recivied"
