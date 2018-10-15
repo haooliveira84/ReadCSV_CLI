@@ -8,6 +8,7 @@ import os
 import sys
 import operator
 import json
+import requests
 import csv_reader
 import json_reader
 
@@ -26,6 +27,8 @@ def main_process(data):
     return jsonify(customers)
 
 def recognize_file(file):
+    if file.startswith('htt'):
+        file = requests.get(file, stream=True)
     try:
         with open(file) as unknown_file:
             opened = unknown_file.read(1)
