@@ -7,7 +7,6 @@ import json
 
 def get_json_remote(file):
     json_data = requests.get(file)
-    json_data
     return json_data.json()
 
 def get_json_local(file):
