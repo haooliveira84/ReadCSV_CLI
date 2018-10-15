@@ -19,7 +19,8 @@ def origin(file):
         if file.startswith('htt'):
             get_json_remote(file)
         else:
-            get_json_local(file)
+            result = get_json_local(file)
+            return result
     except TypeError:
         return "No Json data recivied"
 
