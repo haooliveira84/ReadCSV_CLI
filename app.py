@@ -29,20 +29,30 @@ def main_process(data, idfile):
 def recognize_file(file):
     try:
         if file.startswith('htt'):
-            data = requests.get(file)
-            with open(data) as unknown_data:
-                opened = unknown_data.read(1)
-                print opened
+            recognize_remote_file(file)
         with open(file) as unknown_file:
             opened = unknown_file.read(1)
-            if opened != '[':
-                idfile = "csv"
-                main_process(csv_reader.origin(file), idfile)
-            else:
-                idfile = "json"
-                main_process(json_reader.origin(file), idfile)
+        if opened != '[':
+            idfile = "csv"
+            main_process(csv_reader.origin(file), idfile)
+        else:
+            print "aqui"
+            idfile = "json"
+            main_process(json_reader.origin(file), idfile)
     except TypeError:
         print "No data was receivied"
+
+def recognize_remote_file(file):
+    r = requests.get(file)
+    opened = r.content
+    if opened.startswith('['):
+        idfile = "json"
+        main_process(json_reader.origin(file), idfile)
+    else:
+        idfile = "csv"
+        main_process(csv_reader.origin(file), idfile)
+        
+    
 
 def main ():
     try:
