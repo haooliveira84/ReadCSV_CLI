@@ -1,0 +1,2 @@
+bootstrap:
+	pipenv install --dev 
