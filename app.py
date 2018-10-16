@@ -43,8 +43,10 @@ def recognize_file(file):
         print "No data was receivied"
 
 def main ():
-    file = sys.argv[1]
-    recognize_file(file)
+    try:
+        recognize_file(sys.argv[1])
+    except (KeyboardInterrupt, SystemExit, IndexError):
+        print "No data to read"
 
 if __name__ == "__main__":
     main()
