@@ -18,7 +18,7 @@ cont = Counter()
 def main_process(data, idfile):
     values = []
     if idfile == 'csv':
-        data = json.dumps(data)
+        data = json.loads(data)
     for value in data:
         print data
         values.append((value['estado'], value['nome']))
