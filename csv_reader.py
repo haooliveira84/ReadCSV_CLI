@@ -21,10 +21,8 @@ def get_csvfile_local(file):
 def origin(file):
     try:
         if file.startswith('htt'):
-            ret = get_csvfile_remote(file)
-            return ret
+            return get_csvfile_remote(file)
         else:
-            ret = get_csvfile_local(file)
-            return ret
+            return get_csvfile_local(file)
     except TypeError:
         print "No CSV data recivied"
