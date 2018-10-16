@@ -27,9 +27,12 @@ def main_process(data, idfile):
     print json.dumps(customers)
 
 def recognize_file(file):
-    if file.startswith('htt'):
-        file = requests.get(file, stream=True)
     try:
+        if file.startswith('htt'):
+            data = requests.get(file)
+            with open(data) as unknown_data:
+                opened = unknown_data.read(1)
+                print opened
         with open(file) as unknown_file:
             opened = unknown_file.read(1)
             if opened != '[':
