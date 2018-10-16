@@ -17,8 +17,10 @@ cont = Counter()
 
 def main_process(data, idfile):
     values = []
-    data = json.dumps(data)
+    if idfile == 'csv':
+        data = json.dumps(data)
     for value in data:
+        print data
         values.append((value['estado'], value['nome']))
     for estado, nome in values:
         cont[estado] += 1
@@ -32,13 +34,11 @@ def recognize_file(file):
         with open(file) as unknown_file:
             opened = unknown_file.read(1)
             if opened != '[':
-                r = csv_reader.origin(file)
                 idfile = "csv"
-                main_process(r, idfile)
+                main_process(csv_reader.origin(file), idfile)
             else:
-                result = json_reader.origin(file)
                 idfile = "json"
-                main_process(result, idfile)
+                main_process(json_reader.origin(file), idfile)
     except TypeError:
         print "No data was receivied"
 
