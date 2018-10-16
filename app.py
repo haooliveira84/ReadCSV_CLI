@@ -40,7 +40,7 @@ def recognize_file(file):
             idfile = "json"
             main_process(json_reader.origin(file), idfile)
     except TypeError:
-        print "No data was receivied"
+        print "No data was received"
 
 def recognize_remote_file(file):
     r = requests.get(file)
