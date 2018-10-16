@@ -51,8 +51,7 @@ def recognize_remote_file(file):
     else:
         idfile = "csv"
         main_process(csv_reader.origin(file), idfile)
-        
-    
+           
 
 def main ():
     try:
