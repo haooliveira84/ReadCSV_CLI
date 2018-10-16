@@ -3,27 +3,26 @@
 import sys
 import requests
 import csv
+import json
 
 def get_csvfile_remote(file):
     r = requests.get(file)
     text = r.iter_lines()
-    reader = csv.reader(text, delimiter=',')
-    for row in reader:
-        print row
+    reader = csv.DictReader(text, delimiter=',',fieldnames = ("nome","cidade","estado"))
+    out = json.dumps( [ row for row in reader ] )
+    return out
 
 def get_csvfile_local(file):
-    value = []
     with open(file) as text:
-        reader = csv.reader(text, delimiter=',')
-        for row in reader:
-            value.append(row)
-        return value
+        reader = csv.DictReader(text, delimiter=',',fieldnames = ("nome","cidade","estado"))
+        out = json.dumps( [ row for row in reader ] )
+    return out
 
 def origin(file):
     try:
         if file.startswith('htt'):
             ret = get_csvfile_remote(file)
-            print ret
+            return ret
         else:
             ret = get_csvfile_local(file)
             return ret

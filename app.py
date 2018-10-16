@@ -16,15 +16,16 @@ from collections import Counter
 
 cont = Counter()
 
-def main_process(data):
+def main_process(data, idfile):
     values = []
-    data = sorted(data, key=lambda k: k['estado'])
+    if idfile == "csv":
+        data = json.dumps(data)
     for value in data:
         values.append((value['estado'], value['nome']))
     for estado, nome in values:
         cont[estado] += 1
         customers = sorted(cont.items())
-    return jsonify(customers)
+    print json.dumps(customers)
 
 def recognize_file(file):
     if file.startswith('htt'):
@@ -33,12 +34,13 @@ def recognize_file(file):
         with open(file) as unknown_file:
             opened = unknown_file.read(1)
             if opened != '[':
-                result = csv_reader.origin(file)
-                for row in result:
-                    print row
+                r = csv_reader.origin(file)
+                idfile = "csv"
+                main_process(r, idfile)
             else:
                 result = json_reader.origin(file)
-                print result
+                idfile = "json"
+                main_process(result, idfile)
     except TypeError:
         print "No data was receivied"
 
