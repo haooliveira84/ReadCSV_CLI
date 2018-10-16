@@ -57,7 +57,7 @@ def main ():
         else:
             recognize_file(sys.argv[1])
     except (KeyboardInterrupt, SystemExit, IndexError):
-        raise("No data to read")
+        print ("No data to read")
 
 if __name__ == "__main__":
     main()

@@ -21,5 +21,5 @@ def origin(file):
         else:
             return get_json_local(file)
     except TypeError:
-        raise("No Json data recivied")
+        print("No Json data recivied")
 

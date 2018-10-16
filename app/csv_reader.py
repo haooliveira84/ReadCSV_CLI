@@ -27,4 +27,4 @@ def origin(file):
         else:
             return get_csvfile_local(file)
     except TypeError:
-        raise("No CSV data recivied")
+        print("No CSV data recivied")
