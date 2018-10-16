@@ -28,10 +28,8 @@ def main_process(data, idfile):
 
 def recognize_file(file):
     try:
-        if file.startswith('htt'):
-            recognize_remote_file(file)
         with open(file) as unknown_file:
-            opened = unknown_file.read(1)
+            opened = unknown_file.readline().rstrip()
         if opened != '[':
             idfile = "csv"
             main_process(csv_reader.origin(file), idfile)
@@ -55,7 +53,10 @@ def recognize_remote_file(file):
 
 def main ():
     try:
-        recognize_file(sys.argv[1])
+        if sys.argv[1].startswith('htt'):
+            recognize_remote_file(sys.argv[1])
+        else:
+            recognize_file(sys.argv[1])
     except (KeyboardInterrupt, SystemExit, IndexError):
         print "No data to read"
 
