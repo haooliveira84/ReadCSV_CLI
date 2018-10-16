@@ -9,6 +9,7 @@ def get_csvfile_remote(file):
     r = requests.get(file)
     data = r.iter_lines()
     reader = csv.DictReader(data, delimiter=',',fieldnames = ("nome","cidade","estado"))
+    next(reader)
     out = json.dumps( [ row for row in reader ] )
     return out
 
