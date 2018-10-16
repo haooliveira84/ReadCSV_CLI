@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# This Python file uses the following encoding: utf-8
 
 #!/usr/bin/env python
 
@@ -18,8 +17,7 @@ cont = Counter()
 
 def main_process(data, idfile):
     values = []
-    if idfile == "csv":
-        data = json.dumps(data)
+    data = json.dumps(data)
     for value in data:
         values.append((value['estado'], value['nome']))
     for estado, nome in values:
