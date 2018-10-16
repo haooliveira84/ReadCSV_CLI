@@ -38,7 +38,7 @@ def recognize_file(file):
             idfile = "json"
             main_process(json_reader.origin(file), idfile)
     except TypeError:
-        print "No data was received"
+        raise "No data was received"
 
 def recognize_remote_file(file):
     r = requests.get(file)
@@ -58,7 +58,7 @@ def main ():
         else:
             recognize_file(sys.argv[1])
     except (KeyboardInterrupt, SystemExit, IndexError):
-        raise "No data to read"
+        raise("No data to read")
 
 if __name__ == "__main__":
     main()
