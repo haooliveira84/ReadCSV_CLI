@@ -24,7 +24,7 @@ def main_process(data, idfile):
     for estado, nome in values:
         cont[estado] += 1
         customers = sorted(cont.items())
-    print json.dumps(customers)
+    print(json.dumps(customers))
 
 def recognize_file(file):
     try:
@@ -34,7 +34,6 @@ def recognize_file(file):
             idfile = "csv"
             main_process(csv_reader.origin(file), idfile)
         else:
-            print "aqui"
             idfile = "json"
             main_process(json_reader.origin(file), idfile)
     except TypeError:
