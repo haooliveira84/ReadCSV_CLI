@@ -20,7 +20,6 @@ def main_process(data, idfile):
     if idfile == 'csv':
         data = json.loads(data)
     for value in data:
-        print data
         values.append((value['estado'], value['nome']))
     for estado, nome in values:
         cont[estado] += 1
